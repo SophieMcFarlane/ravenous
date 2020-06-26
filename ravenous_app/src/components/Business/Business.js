@@ -3,6 +3,7 @@ import './Business.css';
 
 
 class Business extends React.Component {
+    //render the individual business components using props to get relevant information
     render(){
         return (
             <div className="Business">
@@ -27,4 +28,5 @@ class Business extends React.Component {
     };
 };
 
+//export the component
 export default Business;

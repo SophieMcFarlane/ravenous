@@ -6,6 +6,7 @@ import SearchBar from '../SearchBar/SearchBar';
 import Yelp from '../../util/Yelp';
 
 class App extends React.Component {
+  //constructor setting the inital state and binding this
   constructor(props){
     super(props);
     this.state = {
@@ -13,7 +14,8 @@ class App extends React.Component {
     }
     this.searchYelp = this.searchYelp.bind(this);
   }
-  
+  //searchYelp method uses search method from Yelp component to deal with API
+  //sets state depending on the resuls from the API
   searchYelp(term, location, sortBy) {
     Yelp.search(term, location, sortBy).then( businesses => {
       this.setState( {
@@ -22,6 +24,7 @@ class App extends React.Component {
     });
   };
 
+  //renders a SearchBar component and a BusinessList component for returning the results of the search
   render() {
     return (
       <div className="App">
@@ -33,4 +36,5 @@ class App extends React.Component {
   }
 };
 
+//exporting the component
 export default App;
